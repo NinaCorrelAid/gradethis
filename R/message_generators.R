@@ -304,9 +304,9 @@ wrong_call <- function(this,
   
   action <- 
     if (is_infix_assign(that_original)) {
-      "assign something to something else with"
+      "zur Definition nutzt"
     } else {
-      "call"
+      "aufrufst"
     }
 
   glue::glue_data(
@@ -315,7 +315,7 @@ wrong_call <- function(this,
       that = that,
       action = action
     ),
-    "{intro}I expected you to {action} {that} where you called {this}."
+    "{intro}Ich habe erwartet, dass Du {that} {action}, aber Du hast {this} genutzt."
   )
 }
 
