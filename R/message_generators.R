@@ -367,7 +367,7 @@ wrong_value <- function(this,
     if (is_infix_assign(that_original)) {
       " zur Definition nutzt "
     } else if (grepl("\\(\\)", that)) {
-      "aufrufst "
+      "aufruft "
     }
 
   glue::glue_data(
@@ -379,7 +379,7 @@ wrong_value <- function(this,
       this = this,
       action = action %||% ""
     ),
-    "{intro}I {expected}, dass Du {that}{action}{that}{where}{this} genutzt."
+    "{intro}Ich {expected}, dass Ihr {that}{action}{that}{where}{this} genutzt."
   )
 }
 
