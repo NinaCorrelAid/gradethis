@@ -336,14 +336,14 @@ wrong_value <- function(this,
 
   intro <- build_intro(.call = enclosing_call)
 
-  expected <- "expected"
+  expected <- "habe erwartet"
   if (length(this) > length(that)) {
-    expected <- "didn't expect"
+    expected <- "habe nicht erwartet"
     that <- this
     this <- NULL
   }
   
-  where <- " where you wrote "
+  where <- " , aber Du hast "
   
   that_original <- that
   that <- prep(that)
@@ -365,9 +365,9 @@ wrong_value <- function(this,
   # solution than tacking on more greps.
   action <- 
     if (is_infix_assign(that_original)) {
-      "you to assign something to something else with "
+      " zur Definition nutzt "
     } else if (grepl("\\(\\)", that)) {
-      "you to call "
+      "aufrufst "
     }
 
   glue::glue_data(
@@ -379,7 +379,7 @@ wrong_value <- function(this,
       this = this,
       action = action %||% ""
     ),
-    "{intro}I {expected} {action}{that}{where}{this}."
+    "{intro}I {expected}, dass Du {that}{action}{that}{where}{this} genutzt."
   )
 }
 
