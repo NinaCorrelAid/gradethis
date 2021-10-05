@@ -343,7 +343,7 @@ wrong_value <- function(this,
     this <- NULL
   }
   
-  where <- " , aber Du hast "
+  where <- " , aber Ihr habt "
   
   that_original <- that
   that <- prep(that)
